@@ -19,7 +19,10 @@ body {
     padding-left: 0 !important; /* Removes default padding */
     margin-left: 50px;
 }
-
+#free-delivery-bar {
+    background-color: #054FB9;
+    color: white !important;
+}
 
 /* from Bulma */
 .icon {
