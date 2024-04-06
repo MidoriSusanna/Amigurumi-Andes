@@ -17,10 +17,10 @@
                 Amigurumi
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="amigurumi-link">
-                <a href="" class="dropdown-item">Keychains and Animals</a>
-                <a href="" class="dropdown-item">Plushies</a>
-                <a href="" class="dropdown-item">Patterns</a>
-                <a href="" class="dropdown-item">All Amigurumi</a>
+                <a href="{% url 'products' %}?category=keychains,animals" class="dropdown-item">Keychains and Animals</a>
+                <a href="{% url 'products' %}?category=plushies" class="dropdown-item">Plushies</a>
+                <a href="{% url 'products' %}?category=patterns" class="dropdown-item">Patterns</a>
+                <a href="{% url 'products' %}?category=keychains,animals,plushies,patterns" class="dropdown-item">All Amigurumi</a>
             </div>
         </li>
 
@@ -29,10 +29,10 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">Benies</a>
-                <a href="" class="dropdown-item">Scarves</a>
-                <a href="" class="dropdown-item">Shawls and snoods</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=beanies" class="dropdown-item">Beanies</a>
+                <a href="{% url 'products' %}?category=scarves" class="dropdown-item">Scarves</a>
+                <a href="{% url 'products' %}?category=shawls,snoods" class="dropdown-item">Shawls and snoods</a>
+                <a href="{% url 'products' %}?category=benies,scarves,shawls,snoods" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
@@ -41,10 +41,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
