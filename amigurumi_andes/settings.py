@@ -184,4 +184,5 @@ environ.Env.read_env()  # read .env file, if it exists
 STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
+DEFAULT_FROM_EMAIL = 'amigurumiandes@example.com'
 
