@@ -252,6 +252,10 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     border-color: #dc3545;
     border-radius: 0;
 }
+/* Footer */
+.black-background {
+    background-color: #000000;
+}
 
 /* Media Queries */
 

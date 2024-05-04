@@ -136,6 +136,45 @@
     {% block content %}
     {% endblock %}
 
+    <footer class="black-background text-white mt-5">
+        <div class="container py-5">
+            <div class="row">
+                <!-- Section 1: About Amigurumi Andes -->
+                <div class="col-md-4">
+                    <h5>Amigurumi Andes</h5>
+                    <p>Explore a world of handcrafted items directly from Chile.</p>
+                    <a href="https://www.instagram.com/" class="text-white mr-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" class="text-white">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                <!-- Section 2: Quick Links -->
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <!-- Section 3: Newsletter Subscription -->
+                <div class="col-md-4">
+                    <h5>Subscribe to our Newsletter</h5>
+                    <form action="" method="post">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Email address" aria-label="Recipient's email" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
