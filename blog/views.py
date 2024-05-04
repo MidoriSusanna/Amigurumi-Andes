@@ -7,7 +7,7 @@ class PostList(generic.ListView):
     """Render a list of published posts"""
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'blog.html'
+    template_name = 'blog/blog.html'
     paginate_by = 8
 
 
@@ -19,7 +19,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog/post_detail.html",
             {
                 "post": post,
             },

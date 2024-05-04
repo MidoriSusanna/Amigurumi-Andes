@@ -1,17 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <!-- Post title and metadata -->
+            <h1 class="post-title">{{ post.title }}</h1>
+            <p class="text-muted">{{ post.author }} | {{ post.created_on|date:"F d, Y" }}</p>
+        </div>
+            <hr class="w-50 mb-1 mx-auto">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
+<div class="overlay"></div> 
 <main class="container-fluid pt-4">
     <!-- Post Header Section with masthead -->
     <div class="masthead">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <!-- Post title and metadata -->
-                    <h1 class="post-title">{{ post.title }}</h1>
-                    <p class="text-muted">{{ post.author }} | {{ post.created_on|date:"F d, Y" }}</p>
-                </div>
                 <div class="col-lg-4 d-none d-lg-block">
                     <!-- Featured image with conditional placeholder -->
                     {% if "placeholder" in post.featured_image.url %}

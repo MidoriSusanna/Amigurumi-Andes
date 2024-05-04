@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-<main class="container-fluid mt-3">
+{% block page_header %}
+<div class="container header-container">
     <div class="row">
-        <div class="col text-center">
-            <h2 class="logo-font">Blog Posts</h2>
-            <!-- Categories or Sorting can be placed here if needed -->
-            <hr class="w-50 mb-1">
+        <div class="col">
+            <h1 class="text-center logo-font mt-5">Blog Posts</h1>
+            <hr class="w-50 mb-1 mx-auto">
         </div>
     </div>
+</div>
+{% endblock %}
 
+{% block content %}
+<div class="overlay"></div> 
+<div class="container-fluid">
     <div class="row justify-content-center">
         {% for post in post_list %}
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -53,5 +57,5 @@
         </ul>
     </nav>
     {% endif %}
-</main>
+</div>
 {% endblock %}
