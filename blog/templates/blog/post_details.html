@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="container-fluid pt-4">
+    <!-- Post Header Section with masthead -->
+    <div class="masthead">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Post title and metadata -->
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <p class="text-muted">{{ post.author }} | {{ post.created_on|date:"F d, Y" }}</p>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block">
+                    <!-- Featured image with conditional placeholder -->
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="{% static 'images/placeholder.png' %}" alt="Default image" class="img-fluid rounded">
+                    {% else %}
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid rounded">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Post Content Section -->
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        {{ post.content|safe }}  <!-- Using 'safe' to render HTML stored in content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
