@@ -3,12 +3,20 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col">
-            <h1 class="text-center logo-font mt-5">Blog Posts</h1>
-            <hr class="w-50 mb-1 mx-auto">
+    <div class="row align-items-center">
+        <!-- Central Header: "Blog Posts" -->
+        <div class="col text-center">
+            <h1 class="logo-font mt-5">Blog Posts</h1>
         </div>
+        
+        <!-- Link for adding new posts, only visible to logged-in users -->
+        {% if user.is_authenticated %}
+        <div class="col-auto ml-auto">
+            <a href="{% url 'post_form' %}" class="text-uppercase" style="color: black; font-size: 16px;">Add a blog post</a>
+        </div>
+        {% endif %}
     </div>
+    <hr class="w-100 mb-1">
 </div>
 {% endblock %}
 
