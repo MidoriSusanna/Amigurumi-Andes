@@ -3,15 +3,23 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row">
-        <div class="col">
-            <!-- Post title and metadata -->
+    <div class="row align-items-center justify-content-between">
+        <div class="col-12 text-center">
+            <!-- Post title and metadata-->
             <h1 class="post-title">{{ post.title }}</h1>
             <p class="text-muted">{{ post.author }} | {{ post.created_on|date:"F d, Y" }}</p>
         </div>
-            <hr class="w-50 mb-1 mx-auto">
+    </div>
+    <div class="row">
+        <div class="col-12 text-right">
+            <!-- Check for authentication and permissions for edit and delete buttons -->
+            {% if user.is_authenticated and post.author.username == user.username or user.is_superuser %}
+                <a href="{% url 'post_edit' post.slug %}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{% url 'post_delete' post.slug %}" class="btn btn-sm btn-danger">Delete</a>
+            {% endif %}
         </div>
     </div>
+    <hr class="mb-1 mx-auto">
 </div>
 {% endblock %}
 

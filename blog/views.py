@@ -21,23 +21,33 @@ class PostDetail(DetailView):
 
 @method_decorator(login_required, name='dispatch')
 class PostCreate(CreateView):
-    """ Provides a view to create a new post. Requires user to be logged in """
+    """ Provides a view to create a new post. Requires user to be logged in. """
     model = Post
     form_class = PostForm
     template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('blog') 
+
+    def get_form_kwargs(self):
+        kwargs = super(PostCreate, self).get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user  # Set the author to the currently logged-in user
+        return super().form_valid(form)
 
 @method_decorator(login_required, name='dispatch')
 class PostUpdate(UpdateView):
     """ Provides a view to update an existing post. Requires user to be logged in. """
     model = Post
     form_class = PostForm
-    template_name = 'blog/post_form.html'
+    template_name = 'blog/post_edit.html'
 
 @method_decorator(login_required, name='dispatch')
 class PostDelete(DeleteView):
     """ Provides a view to delete a post. Requires user to be logged in. """
     model = Post
-    template_name = 'blog/post_confirm_delete.html'
+    template_name = 'blog/post_delete.html'
     success_url = reverse_lazy('blog')  # Redirects to the blog list page after deletion.
 
 def approve_post(request, pk):
