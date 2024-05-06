@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Event, EventParticipation
+from .models import Event, EventJoin
 from .forms import EventForm, ParticipationForm
 
 def event_list(request):
