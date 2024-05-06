@@ -1,12 +1,13 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Event, EventJoin
 
-@admin.register(Event)
-class EventAdmin(admin.ModelAdmin):
-    list_display = ['name', 'location', 'date_time', 'description']
-
-@admin.register(EventJoin)
-class EventJoinAdmin(admin.ModelAdmin):
+class EventAdmin(SummernoteModelAdmin):
     """ Shows in the admin panel which user is participating in which 
     event directly in the admin interface """
-    list_display = ['user', 'event']
+    summernote_fields = ('description',)  # Apply Summernote to the description field.
+    list_display = ['name', 'location', 'date_time', 'description']
+
+admin.site.register(Event, EventAdmin)
+admin.site.register(EventJoin)
+
