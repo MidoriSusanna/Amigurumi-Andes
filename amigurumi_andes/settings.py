@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'profiles',
     'blog',
     'django_summernote',
-    'faqs'
+    'faqs',
     'events',
 ]
 
