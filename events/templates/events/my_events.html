@@ -19,7 +19,8 @@
             <h2>{{ participation.event.name }}</h2>
             <p>{{ participation.event.location }}</p>
             <p>{{ participation.event.date_time }}</p>
-            <p>{{ participation.event.description }}</p>
+            <!-- Use the 'safe' filter to render HTML from Summernote -->
+            <div>{{ participation.event.description|safe }}</div>
             <a href="{% url 'leave_event' participation.event.id %}">Leave Event</a>
         </div>
     {% endfor %}
