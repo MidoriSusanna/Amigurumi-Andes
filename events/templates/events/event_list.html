@@ -13,9 +13,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div> 
+<div class="overlay"></div>
+<div class="container"> 
     {% for event in events %}
-        <div>
+        <div class="event-item p-3">
             <h2>{{ event.name }}</h2>
             <p>{{ event.location }}</p>
             <p>{{ event.date_time }}</p>
@@ -28,4 +29,5 @@
             </form>
         </div>
     {% endfor %}
+</div>
 {% endblock %}

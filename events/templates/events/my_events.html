@@ -13,9 +13,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div> 
+<div class="overlay"></div>
+<div class="container">
     {% for participation in participations %}
-        <div>
+        <div class="event-item p-3">
             <h2>{{ participation.event.name }}</h2>
             <p>{{ participation.event.location }}</p>
             <p>{{ participation.event.date_time }}</p>
@@ -24,4 +25,5 @@
             <a href="{% url 'leave_event' participation.event.id %}">Leave Event</a>
         </div>
     {% endfor %}
+</div> 
 {% endblock %}
