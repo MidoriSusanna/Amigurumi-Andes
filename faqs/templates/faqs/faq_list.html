@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -13,9 +14,9 @@
 
 {% block content %}
 <div class="overlay"></div> 
-<div>
+<div class="container">
     {% for faq in faqs %}
-    <div>
+    <div class="faq-item p-3">
         <h4>{{ faq.question }}</h4>
         <p>{{ faq.answer }}</p>
     </div>

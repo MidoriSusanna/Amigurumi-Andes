@@ -256,6 +256,11 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 .black-background {
     background-color: #000000;
 }
+/* FAQs Page */
+.faq-item {
+    padding-right: 20px;
+    padding-left: 20px;
+}
 
 /* Media Queries */
 
