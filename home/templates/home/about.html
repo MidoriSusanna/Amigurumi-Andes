@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row align-items-center">
+        <div class="col text-center">
+            <h1 class="logo-font mt-5">About Us</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 text-center">
+            <!-- Image in the center of the page -->
+            <img src="{{ MEDIA_URL }}about-us.jpg" alt="About Amigurumi Andes" class="img-fluid rounded shadow mb-4">
+            <!-- Description below the picture -->
+            <div class="text-center p-3">
+                <p class="lead">
+                    Nestled in the heart of Santiago, Chile, Amigurumi Andes is not just a business but a vibrant community of artisans dedicated to preserving and promoting Chilean culture through our handcrafted items. Founded a decade ago, our enterprise has grown from a passionate group of traditional artisans into a globally recognized brand committed to sustainability and cultural heritage.
+                </p>
+                <p class="lead">
+                    Our unique products are meticulously crafted from locally sourced materials, ensuring that each piece carries the essence of Chilean craftsmanship. The alpacas, from which we source wool, graze freely in the lush Chilean fields, living in harmony with nature. Similarly, our cotton is cultivated using methods that support ecological balance, emphasizing our commitment to the environment.
+                </p>
+                <p class="lead">
+                    Our artisans blend modern design with ancient techniques passed down through generations, creating pieces that are not only beautiful but also tell the story of Chilean heritage. From intricate knitting and crochet works to the detailed art of amigurumi, our products are a testament to the skill and dedication of our craftspeople.
+                </p>
+                <p class="lead">
+                    Amigurumi Andes is more than just a marketplace; it's a place of learning and sharing. We host a variety of events both online and in person, providing a platform for artisans to showcase their skills and for enthusiasts to learn more about sustainable practices and artisan crafts. These events foster a sense of community and provide an avenue for cultural exchange, which is central to our mission.
+                </p>
+                <p class="lead">
+                    We invite you to join us in this journey of discovery and appreciation of handmade crafts. Explore our blog for insights, participate in our events, and become a part of the Amigurumi Andes family, as we continue to bring the spirit of Chilean culture to the world.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
