@@ -10,8 +10,8 @@ h1, h2, h3, h4 {
 }
 
 body {
-    background: url('/media/background-header.jpg') no-repeat right fixed;
-    background-size: 60% auto;
+    background: url('/media/homepage.jpg') fixed;
+    background-size: 100% auto;
     color: black;
     font-family: "Open Sans", sans-serif;
 }
@@ -20,9 +20,24 @@ body {
     margin-left: 50px;
 }
 #free-delivery-bar {
-    background-color: #054FB9;
+    background-color: #000;
     color: white !important;
 }
+#homepage-title {
+    background-color: #000;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+#card-section{
+    background-color:#997971;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 40px;
+}
+
 
 /* from Bulma */
 .icon {

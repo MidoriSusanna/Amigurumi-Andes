@@ -2,24 +2,57 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid h-100">
     <div class="row h-100">
         <div class="col-6 col-md-5 col-lg-4 my-auto pl-0 custom-left-align">
-            <h1 class="display-4 logo-font text-black">
+            <h1 class="display-4 text-white" id="homepage-title">
                 Explore a world of handcrafted items directly from Chile
             </h1>
             <div class="my-5">
                 <h4>
                     <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
                 </h4>
+            </div>
+        </div>
+    </div>
+    <!-- Cards Section -->
+    <div class="row" id="card-section">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ MEDIA_URL }}aboutus-index.jpg" class="card-img-top" alt="About Us">
+                <div class="card-body">
+                    <h5 class="card-title">About Us</h5>
+                    <p class="card-text">Discover more about our sustainable small business, putting together the rich culture of Chile and the passion for artisans, knitting, and crochet.</p>
+                    <a href="#" class="btn btn-black">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ MEDIA_URL }}events-index.jpg" class="card-img-top" alt="Our Events">
+                <div class="card-body">
+                    <h5 class="card-title">Our Events</h5>
+                    <p class="card-text">Join our online and offline events about sustainability, knitting, crochet, amigurumi with artisans and volunteers. It is all free!</p>
+                    <a href="{% url 'event_list' %}" class="btn btn-black">Join Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{{ MEDIA_URL }}blog-index.jpg" class="card-img-top" alt="Blog">
+                <div class="card-body">
+                    <h5 class="card-title">Blog</h5>
+                    <p class="card-text">Read our latest articles and join our community to contribute.</p>
+                    <a href="{% url 'blog' %}" class="btn btn-black">Read More</a>
+                </div>
             </div>
         </div>
     </div>
