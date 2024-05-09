@@ -281,6 +281,21 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     padding-right: 20px;
     padding-left: 20px;
 }
+/* Blog pages */
+.post-title {
+    margin-top: 20px;
+}
+.card-blog-title, .card-blog-title:hover, .card-blog-title:visited, .card-blog-title:active {
+    color: black;
+    text-decoration: none;
+}
+.card-blog-title:hover {
+    text-decoration: underline !important;
+}
+.card-blog-excerpt, .card-blog-excerpt:hover, .card-blog-excerpt:visited, .card-blog-excerpt:active {
+    color: black;
+    text-decoration: none;
+}
 
 /* Media Queries */
 

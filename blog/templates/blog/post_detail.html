@@ -29,13 +29,13 @@
     <!-- Post Header Section with masthead -->
     <div class="masthead">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 d-none d-lg-block">
-                    <!-- Featured image with conditional placeholder -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <!-- Featured image with conditional placeholder, centered with Bootstrap -->
                     {% if "placeholder" in post.featured_image.url %}
-                    <img src="{% static 'images/placeholder.png' %}" alt="Default image" class="img-fluid rounded">
+                    <img src="{% static 'images/placeholder.png' %}" alt="Default image" class="img-fluid rounded mx-auto d-block">
                     {% else %}
-                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid rounded">
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="img-fluid rounded mx-auto d-block">
                     {% endif %}
                 </div>
             </div>

@@ -1,13 +1,14 @@
 from django.contrib import admin
 from django.contrib import messages
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Post
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content',)
     list_display = ('title', 'slug', 'status', 'created_on', 'author')
     list_filter = ('status', 'created_on')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
-    actions = ['publish_posts', 'draft_posts']
 
     def publish_posts(self, request, queryset):
         """ Check if the user is a superuser """

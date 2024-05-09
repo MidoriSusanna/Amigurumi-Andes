@@ -3,16 +3,19 @@
 
 {% block page_header %}
 <div class="container header-container">
-    <div class="row align-items-center">
+    <div class="row align-items-center justify-content-between">
         <!-- Central Header: "Blog Posts" -->
         <div class="col text-center">
             <h1 class="logo-font mt-5">Blog Posts</h1>
         </div>
-        
+
         <!-- Link for adding new posts, only visible to logged-in users -->
         {% if user.is_authenticated %}
-        <div class="col-auto ml-auto">
+        <div class="col-auto">
             <a href="{% url 'post_form' %}" class="text-uppercase" style="color: black; font-size: 16px;">Add a blog post</a>
+        </div>
+        {% else %}
+        <div class="col-auto">
         </div>
         {% endif %}
     </div>
@@ -34,8 +37,8 @@
                 {% endif %}
                 <div class="card-body">
                     <a href="{% url 'post_detail' post.slug  %}" class="text-decoration-none">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <p class="card-text">{{ post.excerpt }}</p>
+                        <h5 class="card-title card-blog-title">{{ post.title }}</h5>
+                        <p class="card-text card-blog-excerpt">{{ post.excerpt }}</p>
                     </a>
                 </div>
                 <div class="card-footer bg-white border-0">
@@ -44,7 +47,7 @@
                 </div>
             </div>
         </div>
-        {% if forloop.counter|divisibleby:4 %}
+        {% if forloop.counter|divisibleby:3 %}
         <div class="w-100"></div> <!-- Break after every 4th post for responsiveness -->
         {% endif %}
         {% endfor %}

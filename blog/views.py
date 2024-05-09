@@ -12,7 +12,7 @@ class PostList(ListView):
     model = Post 
     queryset = Post.objects.filter(status=1)
     template_name = 'blog/blog.html'
-    paginate_by = 8
+    paginate_by = 6
 
 class PostDetail(DetailView):
     """ Displays a detailed view of a specific post. """
