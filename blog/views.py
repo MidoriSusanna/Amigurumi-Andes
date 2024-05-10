@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -8,54 +9,64 @@ from .models import Post
 from .forms import PostForm
 
 class PostList(ListView):
-    """ Displays a list of all published posts """
-    model = Post 
+    """Displays a list of all published posts."""
+    model = Post
     queryset = Post.objects.filter(status=1)
     template_name = 'blog/blog.html'
     paginate_by = 6
 
 class PostDetail(DetailView):
-    """ Displays a detailed view of a specific post. """
+    """Displays a detailed view of a specific post."""
     model = Post
     template_name = 'blog/post_detail.html'
 
 @method_decorator(login_required, name='dispatch')
 class PostCreate(CreateView):
-    """ Provides a view to create a new post. Requires user to be logged in. """
+    """Provides a form to create a new post. Only accessible to logged-in users."""
     model = Post
     form_class = PostForm
     template_name = 'blog/post_form.html'
-    success_url = reverse_lazy('blog') 
-
-    def get_form_kwargs(self):
-        kwargs = super(PostCreate, self).get_form_kwargs()
-        kwargs['user'] = self.request.user
-        return kwargs
+    success_url = reverse_lazy('blog')
 
     def form_valid(self, form):
-        form.instance.author = self.request.user  # Set the author to the currently logged-in user
-        return super().form_valid(form)
+        form.instance.author = self.request.user
+        if not self.request.user.is_superuser:
+            form.instance.status = 0  # Set status to Draft if not superuser
+        response = super().form_valid(form)
+        if self.request.user.is_superuser and form.instance.status == 1:
+            messages.success(self.request, "You have successfully published the blog post.")
+        elif self.request.user.is_superuser and form.instance.status == 0:
+            messages.success(self.request, "Your blog post is set to draft.")
+        else:
+            messages.success(self.request, "Your have successfully created your blog post. Your request is waiting for approval.")
+        return response
 
 @method_decorator(login_required, name='dispatch')
 class PostUpdate(UpdateView):
-    """ Provides a view to update an existing post. Requires user to be logged in. """
+    """Provides a form to update an existing post. Only accessible to logged-in users."""
     model = Post
     form_class = PostForm
     template_name = 'blog/post_edit.html'
+    success_url = reverse_lazy('blog')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        if self.request.user.is_superuser and form.instance.status == 1:
+            messages.success(self.request, "You have successfully updated the blog post to published.")
+        elif self.request.user.is_superuser and form.instance.status == 0:
+            messages.success(self.request, "Your blog post update is set to draft.")
+        else:
+            messages.success(self.request, "You have successfully updated your blog post.")
+        return response
 
 @method_decorator(login_required, name='dispatch')
 class PostDelete(DeleteView):
-    """ Provides a view to delete a post. Requires user to be logged in. """
+    """Allows a user to delete a post. Only accessible to logged-in users."""
     model = Post
     template_name = 'blog/post_delete.html'
-    success_url = reverse_lazy('blog')  # Redirects to the blog list page after deletion.
+    success_url = reverse_lazy('blog')
 
-def approve_post(request, pk):
-    """ Allows superusers to approve posts by changing their status. """
-    post = get_object_or_404(Post, pk=pk)
-    if request.user.is_superuser:
-        post.status = 1
-        post.save()
-        return redirect('blog')
-    else:
-        return redirect('blog')
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+        messages.success(request, "You have successfully deleted your blog post.")
+        return response
