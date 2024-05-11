@@ -9,6 +9,22 @@ def faq_list(request):
     return render(request, 'faqs/faq_list.html', {'faqs': faqs})
 
 @login_required
+def create_faq(request):
+    if request.user.is_superuser:
+        if request.method == 'POST':
+            form = FAQForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'New FAQ created successfully.')
+                return redirect('faq_list')
+        else:
+            form = FAQForm()
+        return render(request, 'faqs/create_faq.html', {'form': form})
+    else:
+        messages.error(request, 'You are not authorized to create FAQs.')
+        return redirect('faq_list')
+
+@login_required
 def edit_faq(request, pk):
     faq = get_object_or_404(FAQ, pk=pk)
     if request.user.is_superuser:
