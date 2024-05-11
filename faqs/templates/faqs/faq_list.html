@@ -19,6 +19,10 @@
     <div class="faq-item p-3">
         <h4>{{ faq.question }}</h4>
         <p>{{ faq.answer }}</p>
+        {% if request.user.is_superuser %}
+            <a href="{% url 'edit_faq' faq.id %}" class="btn btn-info">Edit</a>
+            <a href="{% url 'delete_faq' faq.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this?');">Delete</a>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
