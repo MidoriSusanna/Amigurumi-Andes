@@ -311,7 +311,8 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 /* Mailchimp */
 #newsletter-box {
     background-color: #997971;
-    padding: 5px;
+    padding-top: 10px;
+    padding-right: 20px;
 }
 
 /* Media Queries */
