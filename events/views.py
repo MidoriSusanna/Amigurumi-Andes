@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.core.mail import send_mail
 from .models import Event, EventJoin
 from .forms import EventForm, ParticipationForm
@@ -34,9 +35,12 @@ def join_event(request):
 
 @login_required
 def leave_event(request, event_id):
-    """Authneticated users can leave the events they have previously
-    joined"""
-    EventJoin.objects.filter(user=request.user, event_id=event_id).delete()
+    """Authenticated users can leave the events they have previously joined"""
+    if EventJoin.objects.filter(user=request.user, event_id=event_id).exists():
+        EventJoin.objects.filter(user=request.user, event_id=event_id).delete()
+        messages.success(request, "You have successfully left the event")
+    else:
+        messages.info(request, "You were not part of this event.")
     return redirect('my_events')
 
 @login_required

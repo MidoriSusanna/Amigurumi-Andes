@@ -22,7 +22,7 @@
             <p>{{ participation.event.date_time }}</p>
             <!-- Use the 'safe' filter to render HTML from Summernote -->
             <div>{{ participation.event.description|safe }}</div>
-            <a href="{% url 'leave_event' participation.event.id %}">Leave Event</a>
+            <a href="{% url 'leave_event' participation.event.id %}" class="btn btn-black" id="leave-button">Leave Event</a>
         </div>
     {% endfor %}
 </div> 
