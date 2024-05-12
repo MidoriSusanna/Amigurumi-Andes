@@ -359,7 +359,7 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     }
 
     #delivery-banner h4 {
-        font-size: 1 rem;
+        font-size: .9 rem;
     }
 
     .btn.btn-outline-black.rounded-0,
