@@ -10,10 +10,14 @@ h1, h2, h3, h4 {
 }
 
 body {
-    background: url('/media/homepage.jpg') fixed;
-    background-size: 100% auto;
     color: black;
     font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+#background-pic {
+    background: url('/media/homepage.jpg');
+    background-size: 100% auto;
+    margin: 0;
 }
 .custom-left-align {
     padding-left: 0 !important; /* Removes default padding */
@@ -30,12 +34,12 @@ body {
     padding: 10px;
 }
 #card-section{
+    position: absolute;
     background-color:#997971;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 10px;
-    padding-left: 10px;
-    margin-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 
@@ -268,6 +272,11 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     border-radius: 0;
 }
 /* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 .black-background {
     background-color: #000000;
 }
