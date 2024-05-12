@@ -308,6 +308,11 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     color: black;
     text-decoration: none;
 }
+/* Mailchimp */
+#newsletter-box {
+    background-color: #997971;
+    padding: 5px;
+}
 
 /* Media Queries */
 

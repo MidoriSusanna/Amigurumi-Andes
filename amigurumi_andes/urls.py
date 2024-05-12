@@ -32,4 +32,4 @@ urlpatterns = [
     path('faqs/', include('faqs.urls')),
     path('events/', include('events.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'amigurumi_andes.views.handler404'
+handler404 = handler404
