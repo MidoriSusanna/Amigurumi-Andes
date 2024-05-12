@@ -6,9 +6,12 @@ from .models import Event, EventJoin
 from .forms import EventForm, ParticipationForm
 
 def event_list(request):
-    """Display list of events"""
+    """Display list of events with indication of participation for logged-in users."""
     events = Event.objects.all()
-    return render(request, 'events/event_list.html', {'events': events})
+    user_participations = set()
+    if request.user.is_authenticated:
+        user_participations = set(request.user.participations.values_list('event_id', flat=True))
+    return render(request, 'events/event_list.html', {'events': events, 'user_participations': user_participations})
 
 @login_required
 def join_event(request):
