@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from .models import Event, EventJoin
 from .forms import EventForm, ParticipationForm
 
@@ -11,13 +12,23 @@ def event_list(request):
 @login_required
 def join_event(request):
     """Only authenticated users can join events, if they join they are
-    redirected to my events page"""
+    redirected to my events page and receive an email confirmation."""
     if request.method == 'POST':
         form = ParticipationForm(request.POST)
         if form.is_valid():
             event_id = form.cleaned_data['event_id']
             event = Event.objects.get(id=event_id)
             EventJoin.objects.create(user=request.user, event=event)
+            
+            # Send confirmation email
+            send_mail(
+                subject=f"Confirmation for joining {event.name}",
+                message=f"Hi {request.user.first_name},\n\nYou have successfully joined the event '{event.name}' scheduled for {event.date_time}. Here are the details:\n\nLocation: {event.location}\n\nThank you for joining!",
+                from_email=None,  # Uses DEFAULT_FROM_EMAIL from settings
+                recipient_list=[request.user.email],
+                fail_silently=False,
+            )
+            
             return redirect('my_events')
     return redirect('events')
 
