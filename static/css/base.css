@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
 
+
+* {
+    max-width: 100vw;
+}
+
 html {
-    height: 100%;
+    max-width: 100vw;
+    height: 100vh;
 }
 
 h1, h2, h3, h4 {
@@ -10,20 +16,21 @@ h1, h2, h3, h4 {
 }
 
 html, body {
-    height: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 0px;
     color: black;
     font-family: "Open Sans", sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
+
 /* Index page */
-.wrapper {
-    min-height: 100%;
-    margin-bottom: -50px;
-  }
-  .footer,
-  .push {
-    height: 50px;
-  }
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 #background-pic {
     background: url('/media/homepage.jpg');
     background-size: 100% auto;
@@ -44,12 +51,13 @@ html, body {
     padding: 10px;
 }
 #card-section{
-    position: absolute;
+    position: relative;
     background-color:#997971;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     padding-right: 5px;
     padding-left: 5px;
+    margin-bottom: 0px;
 }
 
 /* from Bulma */
