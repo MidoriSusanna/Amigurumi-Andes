@@ -9,11 +9,21 @@ h1, h2, h3, h4 {
     font-family: "Crimson Text", serif;
 }
 
-body {
+html, body {
+    height: 100%;
     color: black;
     font-family: "Open Sans", sans-serif;
     margin: 0;
 }
+/* Index page */
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+  }
+  .footer,
+  .push {
+    height: 50px;
+  }
 #background-pic {
     background: url('/media/homepage.jpg');
     background-size: 100% auto;
@@ -41,7 +51,6 @@ body {
     padding-right: 5px;
     padding-left: 5px;
 }
-
 
 /* from Bulma */
 .icon {
