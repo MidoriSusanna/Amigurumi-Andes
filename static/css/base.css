@@ -245,7 +245,6 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
 }
 
 /* Product Form */
-
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -317,6 +316,12 @@ footer {
     color: black;
     text-decoration: none;
 }
+/* Privacy Policy */
+#privacy-box {
+    margin-right: 60px !important;
+    margin-left: 40px;
+}
+
 /* Mailchimp */
 #newsletter-box {
     background-color: #997971;
