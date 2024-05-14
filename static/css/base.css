@@ -296,6 +296,9 @@ footer {
 .black-background {
     background-color: #000000;
 }
+.divide-footer {
+    margin-bottom: 20px;
+}
 /* FAQs Page */
 .faq-item {
     padding-right: 20px;
@@ -318,6 +321,7 @@ footer {
     background-color: #333333;
     color: #ffffff;
 }
+
 /* Blog pages */
 .post-title {
     margin-top: 20px;
@@ -332,11 +336,6 @@ footer {
 .card-blog-excerpt, .card-blog-excerpt:hover, .card-blog-excerpt:visited, .card-blog-excerpt:active {
     color: black;
     text-decoration: none;
-}
-/* Privacy Policy */
-#privacy-box {
-    margin-right: 60px !important;
-    margin-left: 40px;
 }
 
 /* Mailchimp */

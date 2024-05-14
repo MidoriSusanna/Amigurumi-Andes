@@ -51,3 +51,75 @@ Wirefranes were created by me using Adobe Illustrator:
 
 ![Wireframes dekstop](readme_pics/wireframes-dekstop.png)
 ![Wireframes phone](readme_pics/wireframes-phone.png)
+
+# Features 
+## Header, nav bar and footer
+
+![Header dekstop ](readme_pics/header.png)
+![Header phone](readme_pics/header-phone.png)
+
+![Footer](readme_pics/footer.png)
+
+## Homepage 
+
+![Homepage](readme_pics/homepage.png)
+
+## Product Page
+
+![Product page](readme_pics/products.png)
+
+## Product Detail
+
+![Product details](readme_pics/product-details.png)
+
+## Shopping Bag
+
+![shopping bag](readme_pics/shoppingbag.png)
+
+## My profile
+
+![My profile](readme_pics/myprofile.png)
+
+## Checkout
+
+![Checkout1](readme_pics/checkout1.png)
+![Checkout2](readme_pics/checkout2.png)
+
+## Authentication
+
+![Sign up](readme_pics/signup.png)
+![Sign in](readme_pics/signin.png)
+![Sign out](readme_pics/singout.png)
+
+## About
+
+![About](readme_pics/about.png)
+
+## Blog and blog detail
+
+![Blog](readme_pics/blog.png)
+![Blog detail](readme_pics/blogdetail.png)
+
+## Events and My events
+
+![Events](readme_pics/events.png)
+![My events](readme_pics/myevents.png)
+
+## Product Management
+
+![Product Management1](readme_pics/productman1.png)
+![Product Management2](readme_pics/productman2.png)
+
+## Privacy Policy
+
+![Privacy Policy](readme_pics/privacy-policy.png)
+
+## FAQs
+
+![FAQs](readme_pics/faqs.png)
+
+## Messages and Emails
+
+![Example message 1](readme_pics/example-mess-1.png)
+![Example message 2](readme_pics/example-mess-2.png)
+![Example email](readme_pics/example-email.png)
