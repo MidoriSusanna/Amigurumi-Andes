@@ -149,3 +149,27 @@ A system of messages has been implemented to provide feedback for every user's a
 
 Email confirmations are sent in different occasions: mainly to manage the account registration and also to confirm joining an event. 
 ![Example email](readme_pics/example-email.png)
+
+# Database Chart
+
+![Database 1](readme_pics/database1.png)
+![Database 2](readme_pics/database2.png)
+![Database 3](readme_pics/database3.png)
+
+**Relationships**
+- **Post-User:** Post is linked to User via a ForeignKey on the author field. This relationship indicates that each post is authored by a single user, establishing a many-to-one relationship from Post to User.
+- **Order-UserProfile:** Order is linked to UserProfile via a ForeignKey on the user_profile field. This allows each order to be associated with a user profile. It's a many-to-one relationship where one user profile can have multiple orders.
+- **OrderLineItem, Order, and Product:** 
+OrderLineItem serves as the connection between Order and Product through two ForeignKeys:
+1. order: Links to an Order, signifying that each line item is part of a specific order.
+2. product: Connects to a Product, indicating which product is included in the order line.
+- **Event-User(EventJoin):** 
+EventJoin model uses two ForeignKeys to connect Event and User:
+1. user: Indicates the user who is participating in an event.
+2. event: Points to the event in which the user is participating.
+This setup implements a many-to-many relationship, allowing many users to participate in many events.
+- **Product-Category:**
+Product is related to Category through a ManyToManyField.
+- **User Profile-User:**
+UserProfile has a OneToOneField with User. This direct link ensures that each user has a unique profile.
+
