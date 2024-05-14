@@ -316,3 +316,26 @@ All these config var are safely stored in the env.py file of the project.
 - Search the repository name to connect with Github (in this case "Amigurumi-Andes"). Click "Search" and "Connect".
 - Enable automatic deploy: this way Heroku will rebuild the app every time a new change is pushed to Github. It is also possible to use the manual deploy. 
 - The site should show “App was successfully deployed” message and a button to view the deployed app.
+
+# Web Marketing and SEO
+
+Web Marketing Strategies and SEO documentation can be found here:
+
+[MARKETING and SEO](MARKETING.md)
+
+# Credits
+- Some of my project code is taken from the Walkthrough project "Boutique Ado" of Code Institute
+- Bootstrap documentation has been used for different parts of the website, as for example the carousel in the index page.
+- Use of unique_together function for the models of the events app: https://stackoverflow.com/questions/2201598/how-to-define-two-fields-unique-as-couple
+- Use of Hiddeninput for the forms of the event model: https://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input
+- To test Stripe payments: https://docs.stripe.com/testing
+- Help for 404.html page bug: 404: https://www.w3schools.com/django/django_404.php and https://docs.djangoproject.com/en/5.0/ref/views/ 
+- To create a sitemap for SEO: https://www.xml-sitemaps.com/
+- Privacy Policy generator: https://www.privacypolicygenerator.info/
+- How to create a sticky footer: https://css-tricks.com/couple-takes-sticky-footer/#aa-there-is-flexbox
+- SEO keywords: https://www.wordtracker.com/ 
+- Pictures were taken from Pexels.com and Unsplash.com
+- ChatGPT: blog posts and about us content was created with the help of ChatGPT, description of the packages in the read.me was written with the help of ChatGPT, it was also used to rephrase some text in general to avoid mistakes. 
+- Wireframes were made by me using Adobe Illustrator, taking inspiration from the Walkthrough project of Code Institute
+- For good HTML indentation: https://www.freeformatter.com/html-formatter.html
+- Mock up .psd file: https://www.mockupworld.co/all-mockups/
