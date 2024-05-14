@@ -173,3 +173,34 @@ Product is related to Category through a ManyToManyField.
 - **User Profile-User:**
 UserProfile has a OneToOneField with User. This direct link ensures that each user has a unique profile.
 
+# Testing
+
+Manual Testing and validation can be found here:
+
+[TESTING](TESTING.md)
+
+# Bugs
+- I found an issue with the Country Field: I was not able to make migrations after after introducing the package django-countries==7.2.1. . There was a conflict between my first and third migration I had to fix: the third migration attempts to alter the country field in the Order model to use a django_countries.fields.CountryField with a max_length of 2. The conflict arises because the original country field defined in the first migration (0001_initial) was set with a max_length of 40.
+- I had issues making the real mailing functionality work through gmail. To fix this, I had to add a runtime.txt file with the correct version of python. 
+- The Join event button was causing issues due to the unique_together function used. This prevents a user to sign up for an event more than once. The user can join the event, leave an event and join again, but cannot join more than once if they have already joined and haven't opted out yet. In the beginning, the website was giving an error related to the fact the logged in user could click the "join event" button more than once. To simply fix this issue, I disabled the button once the user has joined (to prevent double click and error).
+- I had issues loading some CSS on the deployed website and also locally. The CSS was loading in different ways in different browsers and in the local and deployed version of the site. I fixed this by cleanening the cache. 
+
+# Unfixed Bugs
+After trying different troubleshooting methods, my 404.html page has still un unfixed bug. The website doesn't find the page and displays a 500 error instead of the 404 page. 
+
+![Bug 1](readme_pics/bug1.png)
+![Bug 2](readme_pics/bug2.png)
+
+These are all the troubleshooting methods I tried:
+
+- Only create the 404.html template directly in the main root. Django should be able to automatically use the 404.html template if it is present in the templates directory when a 404 error occurs. There should be no need to configure urls.py or views.py.
+- Code Institute method: I followed the instructions provided by [Code institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0713d55c023943438d418d83caf4171b/) adding a handler404 function, views and urls. handler404 = 'boutique_ado.views.handler404'.
+-  I thought it might have been an issue with the favicon, considering the error on console. I thought in the deployed app favicon is throwing 500 error and that error is triggered
+when you type something to URL bar, so it was picking up that 500 error instead of 404. I tried then to add a favicon to my website, but this was not the issue. 
+- I tried to change the urls.py file adding this line to set the default 404 handler to the view in the views.py file:
+"handler404='amigurumi_andes.views.page_not_found'".
+- Instead of having just 'from .views import handler404' in the urls.py file, I changed it to 'from . import views', to try to avoid errors in the import name. 
+- I recreated the 404 file in a different folder (home/templates/home) to see if the location of the template html file was the issue.
+- I tried changing the html of the 404 file to a simple h1 element to see if the HTML of the 404 file was causing the issue.
+**None of the above steps have managed to clear the 500 error issue.**
+
