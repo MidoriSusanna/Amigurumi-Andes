@@ -48,3 +48,6 @@ A very simple colour palette was chosen.
 ## Wireframes
 
 Wirefranes were created by me using Adobe Illustrator:
+
+![Wireframes dekstop](readme_pics/wireframes-dekstop.png)
+![Wireframes phone](readme_pics/wireframes-phone.png)
