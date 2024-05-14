@@ -110,7 +110,7 @@ Add Product JS:
 ![Add Product](readme_pics/addproduct-js.png)
 
 Product page JS:
-![Product](readme_pics/products-js.png)
+![Product](readme_pics/products-jss.png)
 
 Country field JS:
 ![Country field](readme_pics/countryfield-js.png)
