@@ -17,7 +17,7 @@ h1, h2, h3, h4 {
 
 html, body {
     height: auto;
-    min-height: 100vh;
+    min-height: 100vh; 
     padding-bottom: 0px;
     color: black;
     font-family: "Open Sans", sans-serif;
@@ -54,7 +54,7 @@ footer {
     position: relative;
     background-color:#997971;
     padding-top: 30px;
-    padding-bottom: 0px;
+    padding-bottom: 30px;
     padding-right: 5px;
     padding-left: 5px;
     margin-bottom: 0px;
@@ -379,11 +379,6 @@ footer {
     .header-container {
         padding-top: 116px;
     }
-
-    /* body {
-        height: calc(100vh - 116px);
-    } */
-
     #homepage-title {
         font-size: 2rem;
         margin-left: 10px;
