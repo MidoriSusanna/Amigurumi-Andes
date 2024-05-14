@@ -279,3 +279,40 @@ Django installs a some packages by default and some packages were instead instal
 **AWS**: a cloud computing platform provided by Amazon, offering scalable and cost-effective cloud computing solutions. Used to create the bucket to host pictures. 
 
 # Deployment
+
+## Version Control
+The website was created in VSCode and pushed to Github to the repository "Amigurumi-Andes".
+- git add: preliminary step before committing new elements.
+- git commit -m "": commit changes to the repository.
+- git push: push the committed code to the GitHub repository.
+
+## Deployment to Heroku
+
+The project was deployed to the cloud platform Heroku. The deployed project can be found at this link:
+https://amigurumi-andes-8d4d6b3c47a6.herokuapp.com/
+
+**Deployment steps:**
+- In order for the project to run on Heroku, we need Heroku to install the dependencies we used in the project. The list of dependencies will go in our requirements.txt file here. To create our list of requirements, we use the following command in the terminal 'pip3 freeze > requirements.txt'.
+- Ensure the Procfile is updated with 'web: gunicorn happy_leaf.wsgi', this is needed to make the app run.
+- Log into the Heroku account, then on the dashboard, click "Create new app".
+- Name the App with a unique name and select your region (EU/USA) and click "create app".
+- Click the "Settings" tab on the top-left to add the Config Var.
+
+![Config Var](readme_pics/configvar.png)
+
+AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, USE_AWS are config var to use AWS to host our pictures. To enable product images to be uploaded django-storages was installed Amazon S3 was used to store media files. [Here the guide to set this up](https://codeinstitute.s3.amazonaws.com/fullstack/AWS%20changes%20sheet.pdf).
+
+DATABASE_URL is the confi var to connect our website to our Postgres database.
+
+EMAIL_HOST_PASS, EMAIL_HOST_USER are config var to be able to use the real mailing service of gmail.
+
+STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WH_SECRET are config var to connect Stripe and manage payments and webhooks. 
+
+All these config var are safely stored in the env.py file of the project. 
+- It is important to keep these keys secret in the env.py file, added to the .gitignore file and do not commit them.
+- It is important to keep DEBUG = False in the settings.py file of our app.
+- Select Deployment method: Github.
+- Confirm conneting with Github.
+- Search the repository name to connect with Github (in this case "Amigurumi-Andes"). Click "Search" and "Connect".
+- Enable automatic deploy: this way Heroku will rebuild the app every time a new change is pushed to Github. It is also possible to use the manual deploy. 
+- The site should show “App was successfully deployed” message and a button to view the deployed app.
