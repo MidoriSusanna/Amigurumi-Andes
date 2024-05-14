@@ -380,9 +380,9 @@ footer {
         padding-top: 116px;
     }
 
-    body {
+    /* body {
         height: calc(100vh - 116px);
-    }
+    } */
 
     #homepage-title {
         font-size: 2rem;
