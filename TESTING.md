@@ -92,11 +92,31 @@ An error has been found related to allauth set up.
 
 # CSS
 
-The custom css page has been validated with [W3C Validator](https://jigsaw.w3.org/css-validator/)
+The custom css page has been validated with [W3C Validator](https://jigsaw.w3.org/css-validator/) and no errors were found:
+
+![CSS validate](readme_pics/basecsstest.png)
 
 # JS
 
-The emailJs file has been validated with [JShint](https://jshint.com/)
+The JS files have been validated with [JShint](https://jshint.com/), no errors were find apart from some "missing semicolon", which in Javascript are not always mandatory due to a feature called Automatic Semicolon Insertion.
+
+Scroll:
+![Scroll](readme_pics/scroll-js.png)
+
+Bag JS:
+![Bag](readme_pics/bag-js.png)
+
+Add Product JS:
+![Add Product](readme_pics/addproduct-js.png)
+
+Product page JS:
+![Product](readme_pics/products-js.png)
+
+Country field JS:
+![Country field](readme_pics/countryfield-js.png)
+
+Stripe JS:
+![Stripe Js](readme_pics/stripe-js.png)
 
 # Python
 
