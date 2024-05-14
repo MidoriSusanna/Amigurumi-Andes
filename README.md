@@ -180,12 +180,13 @@ Manual Testing and validation can be found here:
 [TESTING](TESTING.md)
 
 # Bugs
+## Fixed bugs
 - I found an issue with the Country Field: I was not able to make migrations after after introducing the package django-countries==7.2.1. . There was a conflict between my first and third migration I had to fix: the third migration attempts to alter the country field in the Order model to use a django_countries.fields.CountryField with a max_length of 2. The conflict arises because the original country field defined in the first migration (0001_initial) was set with a max_length of 40.
 - I had issues making the real mailing functionality work through gmail. To fix this, I had to add a runtime.txt file with the correct version of python. 
 - The Join event button was causing issues due to the unique_together function used. This prevents a user to sign up for an event more than once. The user can join the event, leave an event and join again, but cannot join more than once if they have already joined and haven't opted out yet. In the beginning, the website was giving an error related to the fact the logged in user could click the "join event" button more than once. To simply fix this issue, I disabled the button once the user has joined (to prevent double click and error).
 - I had issues loading some CSS on the deployed website and also locally. The CSS was loading in different ways in different browsers and in the local and deployed version of the site. I fixed this by cleanening the cache. 
 
-# Unfixed Bugs
+## Unfixed Bugs
 After trying different troubleshooting methods, my 404.html page has still un unfixed bug. The website doesn't find the page and displays a 500 error instead of the 404 page. 
 
 ![Bug 1](readme_pics/bug1.png)
@@ -202,5 +203,79 @@ when you type something to URL bar, so it was picking up that 500 error instead 
 - Instead of having just 'from .views import handler404' in the urls.py file, I changed it to 'from . import views', to try to avoid errors in the import name. 
 - I recreated the 404 file in a different folder (home/templates/home) to see if the location of the template html file was the issue.
 - I tried changing the html of the 404 file to a simple h1 element to see if the HTML of the 404 file was causing the issue.
+
 **None of the above steps have managed to clear the 500 error issue.**
 
+# Tools and technologies used
+
+## Languages and Frameworks
+
+**Django** is utilized as the web framework, built on Python for server-side programming.
+
+**Python** acts as the primary backend programming language.
+
+**HTML** is used for both markup and template design.
+
+**CSS** is applied for styling purposes, customised CSS has been added to Bootstrap tags. 
+
+**Bootstrap** is selected as the CSS framework for responsive design.
+
+**JavaScript** is used to implement some front end funcionalitites to improve user experience and for the quantity input.
+
+## Django Packages
+
+Django installs a some packages by default and some packages were instead installed manually (requirements.txt file):
+
+**boto3==1.34.101:** Amazon Web Services (AWS) SDK for Python, allowing Python developers to write software that uses services like Amazon S3.
+
+**botocore==1.34.101:** Core functionality of Boto3, which is the foundation for AWS CLI.
+
+**dj-database-url==2.1.0:** Allows Django projects to utilize a database configured through a single environment variable, simplifying database configuration.
+
+**Django==3.2.25:** Python web framework.
+
+**django-allauth==0.61.1:** Provides authentication tools for Django, including social authentication, allowing for easy user authentication.
+
+**django-countries==7.2.1:** Adds country choices to Django models and forms, supported by a country field.
+
+**django-crispy-forms==1.14.0:** To control the rendering behavior of Django forms with a simple layout and usage.
+
+**django-environ==0.11.2:** Configure Django applications with environment variables.
+
+**django-storages==1.14.3:** A collection of custom storage backends for Django, including storages for various providers like Amazon S3.
+
+**django-summernote==0.8.20.0:** Integrates Django with Summernote, a simple, WYSIWYG editor.
+
+**gunicorn==20.1.0:** python WSGI HTTP Server for better deployment.
+
+**idna==3.7:** Supports the Internationalized Domain Names in Applications (IDNA) protocol.
+
+**pillow==10.3.0:** The Python Imaging Library.
+
+**psycopg2-binary==2.9.9:** PostgreSQL adapter for Python.
+
+**pycodestyle==2.11.1:** A tool to check Python code against some of the style conventions in PEP 8.
+
+**s3transfer==0.10.1:** A Python library for managing Amazon S3 transfers.
+
+**stripe==9.3.0:** A Python library for Stripe’s API that allows to charge credit cards, manage subscriptions, and perform many other financial operations.
+
+## Others
+
+**Font Awesome**: website used for icons.
+
+**ElephantSQL**: it is the cloud-based PostgreSQL database management service that was used for this project.
+
+**VS Code**: used as a main coding environment. 
+
+**Git**: used for version control.
+
+**GitHub**: hosting site for the repository of the project.
+
+**Heroku**: cloud-based platform where the website was deployed.
+
+**Stripe**: a comprehensive payment processing platform designed for online businesses and e-commerce. 
+
+**AWS**: a cloud computing platform provided by Amazon, offering scalable and cost-effective cloud computing solutions. Used to create the bucket to host pictures. 
+
+# Deployment
