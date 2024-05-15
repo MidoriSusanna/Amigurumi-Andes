@@ -64,9 +64,9 @@ On mobile version and smaller screens, the menu becomes an hamburger menu, where
 
 ![Header phone](readme_pics/header-phone.png)
 
-The footer features all pages. It contains the company name, a brief description of the company, social media icons. In a second column links to contact us page, privacy policy and FAQs. In a third column the form to subscribed to the newsletter. If the user subscribe to the newsletter, a thank you message is provided. 
+The footer features all pages. It contains the company name, a brief description of the company, social media icons. In a second column links to contact us page, privacy policy and FAQs. In a third column the form to subscribed to the newsletter. If the user subscribe to the newsletter, a thank you message is provided. The colour of the footer has been changed to white before submission to improve accessibility and reduce colour contrast.
 
-![Footer](readme_pics/footer.png)
+![Footer](readme_pics/footerr.png)
 
 ## Homepage
 The homepage is composed by a hero image with a shop now button that brings the user to the product page. It is also composed by a section with 3 cards, each one of them bringing to a different part of the website and providing a preview of the website content.
@@ -76,7 +76,7 @@ The homepage is composed by a hero image with a shop now button that brings the 
 ## Product Page
 The product page shows the total number of products available, each product with a picture, name of the product, cost and rate. This page has also a sorting function, where it is possible to sort the products by name, price, rating and category. It is possible only for the superadmin to edit and delete products direclty from the frontend and not just in the admin page.
 
-![Product page](readme_pics/products.png)
+![Product page](readme_pics/productss.png)
 
 ## Product Detail
 The product details page shows a picture of the product, the name of the product, price, rating, description, size (if available), chosen quantity and the options of adding the product to bag or keep shopping on the product page. The quantity can be increased with the "+" button or decreased with the "-" button, but it cannot go below 1. To make any purchase, the user needs to be logged in.
