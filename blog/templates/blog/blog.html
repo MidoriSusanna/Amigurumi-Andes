@@ -12,7 +12,7 @@
         <!-- Link for adding new posts, only visible to logged-in users -->
         {% if user.is_authenticated %}
         <div class="col-auto">
-            <a href="{% url 'post_form' %}" class="text-uppercase" style="color: black; font-size: 16px;">Add a blog post</a>
+            <a href="{% url 'post_form' %}" class="text-uppercase btn btn-success">Add a blog post</a>
         </div>
         {% else %}
         <div class="col-auto">

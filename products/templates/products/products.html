@@ -56,13 +56,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="products-box">
             {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <div class="product-image-container">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">

@@ -283,6 +283,26 @@ transition: color .15s ease-in-out,background-color .15s ease-in-out,border-colo
     border-color: #dc3545;
     border-radius: 0;
 }
+/* Product page */
+.product-image-container {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#products-box {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 /* Footer */
 footer {
     position: relative;
@@ -336,9 +356,12 @@ footer {
 
 /* Mailchimp */
 #newsletter-box {
-    background-color: #997971;
+    background-color: white;
     padding-top: 10px;
     padding-right: 20px;
+}
+.newsletter-titles {
+    color: black;
 }
 
 /* Media Queries */
@@ -398,7 +421,7 @@ footer {
     }
 
     #delivery-banner h4 {
-        font-size: 0.9rem;
+        font-size: 1.4rem;
     }
 
     .btn.btn-outline-black.rounded-0,
