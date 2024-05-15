@@ -4,9 +4,11 @@ from django.contrib import messages
 from .models import FAQ
 from .forms import FAQForm
 
+
 def faq_list(request):
     faqs = FAQ.objects.all()
     return render(request, 'faqs/faq_list.html', {'faqs': faqs})
+
 
 @login_required
 def create_faq(request):
@@ -23,6 +25,7 @@ def create_faq(request):
     else:
         messages.error(request, 'You are not authorized to create FAQs.')
         return redirect('faq_list')
+
 
 @login_required
 def edit_faq(request, pk):
@@ -41,6 +44,7 @@ def edit_faq(request, pk):
         messages.error(request, 'You are not authorized to edit FAQs.')
         return redirect('faq_list')
 
+
 @login_required
 def delete_faq(request, pk):
     faq = get_object_or_404(FAQ, pk=pk)
@@ -53,4 +57,3 @@ def delete_faq(request, pk):
     else:
         messages.error(request, 'You are not authorized to delete FAQs.')
         return redirect('faq_list')
-

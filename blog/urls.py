@@ -8,3 +8,4 @@ urlpatterns = [
     path('edit/<slug:slug>/', PostUpdate.as_view(), name='post_edit'),
     path('delete/<slug:slug>/', PostDelete.as_view(), name='post_delete'),
 ]
+

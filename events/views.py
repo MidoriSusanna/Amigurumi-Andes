@@ -5,13 +5,18 @@ from django.core.mail import send_mail
 from .models import Event, EventJoin
 from .forms import EventForm, ParticipationForm
 
+
 def event_list(request):
-    """Display list of events with indication of participation for logged-in users."""
+    """Display list of events with indication
+    of participation for logged-in users."""
     events = Event.objects.all()
     user_participations = set()
     if request.user.is_authenticated:
-        user_participations = set(request.user.participations.values_list('event_id', flat=True))
-    return render(request, 'events/event_list.html', {'events': events, 'user_participations': user_participations})
+        user_participations = set(request.user.participations.values_list(
+            'event_id', flat=True))
+    return render(request, 'events/event_list.html', {
+        'events': events, 'user_participations': user_participations})
+
 
 @login_required
 def join_event(request):
@@ -23,18 +28,24 @@ def join_event(request):
             event_id = form.cleaned_data['event_id']
             event = Event.objects.get(id=event_id)
             EventJoin.objects.create(user=request.user, event=event)
-            
+
             # Send confirmation email
             send_mail(
                 subject=f"Confirmation for joining {event.name}",
-                message=f"Hi {request.user.first_name},\n\nYou have successfully joined the event '{event.name}' scheduled for {event.date_time}. Here are the details:\n\nLocation: {event.location}\n\nThank you for joining!",
+                message=f"Hi {request.user.first_name},"
+                        f"\n\nYou have successfully joined "
+                        f"the event '{event.name}' scheduled "
+                        f"for {event.date_time}. Here are the "
+                        f"details:\n\nLocation: {event.location}"
+                        f"\n\nThank you for joining!",
                 from_email=None,  # Uses DEFAULT_FROM_EMAIL from settings
                 recipient_list=[request.user.email],
                 fail_silently=False,
             )
-            
+
             return redirect('my_events')
     return redirect('events')
+
 
 @login_required
 def leave_event(request, event_id):
@@ -46,8 +57,10 @@ def leave_event(request, event_id):
         messages.info(request, "You were not part of this event.")
     return redirect('my_events')
 
+
 @login_required
 def my_events(request):
     """Shows the events the user has joined"""
     participations = request.user.participations.all()
-    return render(request, 'events/my_events.html', {'participations': participations})
+    return render(request, 'events/my_events.html', {
+        'participations': participations})
