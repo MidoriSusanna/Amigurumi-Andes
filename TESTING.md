@@ -122,6 +122,100 @@ Stripe JS:
 
 The project follows the PEP8 style guidelines and passes the [CI Phyton Linter](https://pep8ci.herokuapp.com) with no errors. 
 The files settings.py and env.py have not undergone validation against the PP8 standards to prevent any potential disruptions to the application's functionality. These files are critical to the app's operation, and I opted to not modify them to ensure stability.
+Some long lines have been left unmodified to preserve the integrity of the code without incurring in mistakes.
+
+**Amigurumi Andes App:**
+- Urls.py:
+![Urls py AA](readme_pics/amigurumiandes-urls.png)
+- Views.py:
+![Views py AA](readme_pics/amigurumiandes-views.png)
+
+**Home App:**
+- Urls.py:
+![Urls py Home](readme_pics/home-urls.png)
+- Views.py:
+![Views py Home](readme_pics/home-views.png)
+
+**Bag App:**
+- Context.py
+![Context py bag](readme_pics/bag-context.png)
+- Urls.py:
+![Urls py bag](readme_pics/bag-urls.png)
+- Views.py:
+![views py bag](readme_pics/bag-views.png)
+
+**Blog App:**
+- Admin.py:
+![Admin py blog](readme_pics/blog-admin.png)
+- Forms.py:
+![Forms py blog](readme_pics/blog-forms.png)
+- models.py:
+![Models py blog](readme_pics/blog-models.png)
+- urls.py:
+![urls py blog](readme_pics/blog-urls.png)
+- views.py:
+![views py blog](readme_pics/blog-views.png)
+
+**Checkout App:**
+- Admin.py:
+![admin py checkout](readme_pics/checkout-admin.png)
+- Forms.py:
+![forms py checkout](readme_pics/checkout-forms.png)
+- Models.py:
+![models py checkout](readme_pics/checkout-models.png)
+- urls.py:
+![urls py checkout](readme_pics/checkout-urls.png)
+- Views.py:
+![views py checkout](readme_pics/checkout-views-E.png)
+- Webhook handler.py:
+![webhook handler py checkout](readme_pics/checkout-webh-handler-E.png)
+- webhook.py:
+![webhook py checkout](readme_pics/checkout-webh-E.png)
+
+**Events App:**
+- admin.py:
+![admin py events](readme_pics/events-admin.png)
+- forms.py:
+![forms py events](readme_pics/events-form.png)
+- models.py:
+![models py events](readme_pics/events-model.png)
+- urls.py:
+![urls py events](readme_pics/events-urls.png)
+- views.py:
+![views py events](readme_pics/events-views.png)
+
+**FAQs App:**
+- forms.py:
+![forms py faqs](readme_pics/faqs-forms.png)
+- models.py:
+![models py faqs](readme_pics/faqs-model.png)
+- urls.py:
+![urls py faqs](readme_pics/faqs-urls.png)
+- views.py:
+![views py faqs](readme_pics/faqs-views.png)
+
+**Products App:**
+- admin.py:
+![admin py products](readme_pics/products-admin.png)
+- forms.py:
+![forms py products](readme_pics/products-form.png)
+- models.py:
+![models py products](readme_pics/products-model.png)
+- urls.py:
+![urls py products](readme_pics/products-urls.png)
+- views.py:
+![views py products](readme_pics/product-views-E.png)
+
+**Profile App:**
+- forms.py:
+![forms py profile](readme_pics/profile-form.png)
+- models.py:
+![models py profile](readme_pics/profile-model.png)
+- urls.py:
+![urls py profile](readme_pics/profile-urls.png)
+- views.py:
+![views py profile](readme_pics/profile-views.png)
+
 
 # Lighthouse report
 
@@ -131,4 +225,4 @@ The website is fully responsive across various browsers and screen sizes includi
 
 # Colour contrast
 
-The website was tested for colour contrasts with [WAVE](https://wave.webaim.org) to improve accessibility, no low contrast areas were found.
+The website was tested for colour contrasts with [WAVE](https://wave.webaim.org) to improve accessibility, no concerning low contrast areas were found.
