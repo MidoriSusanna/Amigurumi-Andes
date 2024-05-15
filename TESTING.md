@@ -216,6 +216,9 @@ Some long lines have been left unmodified to preserve the integrity of the code 
 - views.py:
 ![views py profile](readme_pics/profile-views.png)
 
+# Stripe
+Stripe has been tested with a webhook system, here an example:
+![Stripe webhooks](readme_pics/stripe-test.png)
 
 # Lighthouse report
 
@@ -226,3 +229,41 @@ The website is fully responsive across various browsers and screen sizes includi
 # Colour contrast
 
 The website was tested for colour contrasts with [WAVE](https://wave.webaim.org) to improve accessibility, no concerning low contrast areas were found.
+
+# Manual Testing
+
+**Intuitive viewing and navigation**
+As a user I want to easily navigate the website and being able to easily find the links I am looking for, so that I can have a seamless and pleasant navigation experience. > every page gives the user access to other pages, the layout is intuitive > PASSED.
+
+As a User I want to be able to view a list of products so that I can select something to purchase. > by clicking on the product tab, the user has access to the full list of products > PASSED.
+
+As a user I want to view a specific category of products so that I can quickly find products I am interested in without having to search though all products. > the user can select from the menu products by category, rating and prices > by clicking on yoru choice, you're brought to the right filtered page > PASSED. 
+
+As a user I want to be able to view individual product details so that I can Identify the price, description, product rating, product image and available sizes. > by clicking on the specific product in the product page, I can access the product details > PASSED.
+
+As a user I want to be able to easily view the total of my purchases at any time so that I can avoid spending too much and check keep track of my purchase. > By clicking the "+" button, I can see the amount increasing below the cart icon on the top right of the page > PASSED.
+
+As a user I want to be able to see a 404 page so that I can understand what I am looking for is not present in the website/cannot be found. > FAILED and reported as a bug.
+
+**Registration and user account**
+
+As a user I want to be able to receive an email confirmation after registering, so that I can verify that my account registration was successful. > after signing in, the page redirect to a confirmation email page, by confirming the email the user can create the account > PASSED.
+
+As a user I want to be able to easily recover my password in case I forget it, so that I can recover access to my account. > by clicking "forgot my password?" the user can access the password recover process, which consist in sending an email to change the password > PASSED.
+
+As a user I want to be able to easily login and logout, so that I can access my personal account information quickly. > by clicking to "My Account" icon the user can decide to register, registerting requires few information, by signing up the user has access to more features. From the same icon the user can log out > PASSED.
+
+As a user I want to be able to easily register for an account, so that I can be able to have a personal account and be able to view my profile. > once registered, by clicking on the "My Account" icon the user can access the profile > PASSED. 
+
+As a user I want to be able to have a personalized user profile, so that I can view my personal order history and order confirmations, and save my payment information.> by clicking on "My Account" and "My Profile" the user can access the order history, during checkout if "Save my information" is ticked, the user can also see the personal information in the profile > PASSED.
+
+**Sorting and Searching**
+
+As a user I want to easily see what I've searched for, so that I can quickly decide wheather the product I want is available. > the user can search a product through the search bar, categories in the all products menu and sorting in the products page > PASSED.
+
+As a user I want to be able to search for a product by name or description, so that I can find a specific product I'd like to purchase. > by typing what we are looking for in the search bar, the user is able to find an item by name or description > PASSED.
+
+As a user I want to be able to sort a specific category of product, so that I can find the best-priced or best-rated product in a specific category, or sort the products in that category by name. > in the products page, it is possible for the user to sort products in different ways by clicking on the sorting tab and choosing the dorting type > PASSED.
+
+As a user I want to be able to sort the list of available products, so that I can easily identify the best rated, best priced and categorically sorted products. > in the product page, it is possible to see the number of products on the top left of the page > PASSED.
+
