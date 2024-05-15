@@ -204,6 +204,9 @@ when you type something to URL bar, so it was picking up that 500 error instead 
 - I recreated the 404 file in a different folder (home/templates/home) to see if the location of the template html file was the issue.
 - I tried changing the html of the 404 file to a simple h1 element to see if the HTML of the 404 file was causing the issue.
 
+
+Google Lightouse reports a 500 error with the robots.txt file. The file is present in the root directory of my website. 
+
 **None of the above steps have managed to clear the 500 error issue.**
 
 # Tools and technologies used

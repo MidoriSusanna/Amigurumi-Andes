@@ -222,6 +222,13 @@ Stripe has been tested with a webhook system, here an example:
 
 # Lighthouse report
 
+The Lighthouse report presents some issues that can be addressed by taking different measures:
+- Compressing and resizing big images 
+- Implement the usage of headings in descending order with clearer tags and more keywords present
+- Eliminate the favicon error presented to the console
+- Be more descriptive when nominating links to help SEO
+- Fix the bugs with the 404.html page and the robots.txt and eliminate the 500 error
+
 # Responsiveness
 
 The website is fully responsive across various browsers and screen sizes including desktops, tablets, and phones.
@@ -313,6 +320,7 @@ As a user I want to be able to leave events when logged in, so that I can notify
 As a user, I want to receive further confirmation about my participation at an event via email, so that I can make sure to have all the necessary details. > by clicking "Join event" the logged in user is sent a confirmation email, the confirmation email contains all the details of the event > PASSED.
 
 **FAQs and Privacy Policy**
+
 As a user, I want to be able to access a FAQ page, so that I can check this before sending enquiries to the company.> by clicking "FAQs" in the footer, the user (even if not logged in) can access the FAQs page > PASSED.
 
 As an admin, I want to be able to create new FAQs, so that I can keep the website up to date with the feedback of the users.> if the admin is logged in, the FAQs page shows different button. On the top right a button is shown "Create new FAQ" and by clicking it the admin can create a new FAQ. This is also possible from the admin panel > PASSED.
