@@ -14,11 +14,11 @@
 
 {% block content %}
 <div class="overlay"></div> 
-<div class="container">
+<div class="container divide-footer">
     <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Update FAQ</button>
+    <button type="submit" class="btn btn-primary">Update FAQ</button>
     </form>
 </div>
 {% endblock %}

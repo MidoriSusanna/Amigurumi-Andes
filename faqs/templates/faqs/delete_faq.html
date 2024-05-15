@@ -14,12 +14,12 @@
 
 {% block content %}
 <div class="overlay"></div> 
-<div class="container">
+<div class="container divide-footer">
     <p>Are you sure you want to delete "{{ faq.question }}"?</p>
     <form method="post">
     {% csrf_token %}
-    <button type="submit">Delete</button>
-    <a href="{% url 'faq_list' %}">Cancel</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'faq_list' %}" class="btn btn-primary">Cancel</a>
     </form>
 </div>
 {% endblock %}
