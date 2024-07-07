@@ -14,12 +14,14 @@
 {% block content %}
 <div class="container divide-footer">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-12">
             <div class="overlay"></div> 
             <!-- Form starts here -->
             <form method="post" class="mt-4" enctype="multipart/form-data">
                 {% csrf_token %}
-                {{ form.as_p }}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
                 <button type="submit" class="btn btn-black">Save</button>
             </form>
         </div>
