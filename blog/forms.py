@@ -10,10 +10,6 @@ class PostForm(forms.ModelForm):
         if user and not user.is_superuser:
             self.fields.pop('status', None)  # Hide 'status' from non-superusers
 
-        # Add Bootstrap classes to all fields
-        for field in self.fields.values():
-            field.widget.attrs.update({'class': 'form-control'})
-
     class Meta:
         model = Post
         fields = [
