@@ -150,6 +150,9 @@ A system of messages has been implemented to provide feedback for every user's a
 Email confirmations are sent in different occasions: mainly to manage the account registration and also to confirm joining an event. 
 ![Example email](readme_pics/example-email.png)
 
+An email is also sent upon user purchase for confirmation:
+![Example email2](readme_pics/example-email-2.png)
+
 # Database Chart
 
 ![Database 1](readme_pics/database1.png)
@@ -186,31 +189,21 @@ Manual Testing and validation can be found here:
 - The Join event button was causing issues due to the unique_together function used. This prevents a user to sign up for an event more than once. The user can join the event, leave an event and join again, but cannot join more than once if they have already joined and haven't opted out yet. In the beginning, the website was giving an error related to the fact the logged in user could click the "join event" button more than once. To simply fix this issue, I disabled the button once the user has joined (to prevent double click and error).
 - I had issues loading some CSS on the deployed website and also locally. The CSS was loading in different ways in different browsers and in the local and deployed version of the site. I fixed this by cleanening the cache. 
 
-## Unfixed Bugs
-After trying different troubleshooting methods, my 404.html page has still un unfixed bug. The website doesn't find the page and displays a 500 error instead of the 404 page. 
+- After trying different troubleshooting methods, I managed to fix my 404.html page. The page was not found and it created a broken link which was hampering the user experience. A 500 error was previously displayed: 
 
 ![Bug 1](readme_pics/bug1.png)
 ![Bug 2](readme_pics/bug2.png)
 
-These are all the troubleshooting methods I tried:
+Now the 404 page is displaying correctly when a page is not found. I fixed this bug by placing the 404 page in the correct path and thoroughly following the instructions provided by [Code institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0713d55c023943438d418d83caf4171b/) adding a handler404 function, views and urls. handler404 = 'boutique_ado.views.handler404'.
+- Emails where not sent properly upon user purchase. To fix this issue I had to work on the webhook handler. After a Stripe update, the charges attribute is no longer available directly from the payment intent. To get the billing_details I had to update the payment_intent_succeeded method within the StripeWH_Handler class in webhook_handler.py. 
+- I had some issues with defensive design (blog section): any logged in user could edit and delete any blog post by navigating directly to the URL for these, this way users' data is not fully secure in the application. I implemented checks so that only a user who creates a blog post can edit or delete it (or superadmin). I did this by modfying the views and adding the 
+UserPassestestMixin and test_func. This is the result: 
 
-- Only create the 404.html template directly in the main root. Django should be able to automatically use the 404.html template if it is present in the templates directory when a 404 error occurs. There should be no need to configure urls.py or views.py.
-- Code Institute method: I followed the instructions provided by [Code institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+EA101+2/courseware/eb05f06e62c64ac89823cc956fcd8191/0713d55c023943438d418d83caf4171b/) adding a handler404 function, views and urls. handler404 = 'boutique_ado.views.handler404'.
--  I thought it might have been an issue with the favicon, considering the error on console. I thought in the deployed app favicon is throwing 500 error and that error is triggered
-when you type something to URL bar, so it was picking up that 500 error instead of 404. I tried then to add a favicon to my website, but this was not the issue. 
-- I tried to change the urls.py file adding this line to set the default 404 handler to the view in the views.py file:
-"handler404='amigurumi_andes.views.page_not_found'".
-- Instead of having just 'from .views import handler404' in the urls.py file, I changed it to 'from . import views', to try to avoid errors in the import name. 
-- I recreated the 404 file in a different folder (home/templates/home) to see if the location of the template html file was the issue.
-- I tried changing the html of the 404 file to a simple h1 element to see if the HTML of the 404 file was causing the issue.
+![Forbidden 1](readme_pics/forbidden-edit.png)
+![Forbidden 2](readme_pics/forbidden-delete.png)
 
-**None of the above steps have managed to clear the 500 error issue.**
-
-Google Lightouse reports a 500 error with the robots.txt file. The file is present in the root directory of my website. 
-
-- I tried to upload both files to AWS to see if the browser would find the file. 
-
-**None of the above steps have managed to clear the 500 error issue.**
+A forbidden page is given when a logged-in user who hasn't written an article tries to delete or edit it by navigating directly to the URL. 
+- I had a responsiveness issue related to summernote, I manaed to fix it by adding SUMMERNOTE_CONFIG to the settings file. 
 
 # Tools and technologies used
 
@@ -334,6 +327,7 @@ Web Marketing Strategies and SEO documentation can be found here:
 - Bootstrap documentation has been used for different parts of the website, as for example the carousel in the index page.
 - Use of unique_together function for the models of the events app: https://stackoverflow.com/questions/2201598/how-to-define-two-fields-unique-as-couple
 - Use of Hiddeninput for the forms of the event model: https://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input
+- Use of UserPassestestMixin and test_func: https://docs.djangoproject.com/en/5.0/topics/auth/default/
 - To test Stripe payments: https://docs.stripe.com/testing
 - Help for 404.html page bug: 404: https://www.w3schools.com/django/django_404.php and https://docs.djangoproject.com/en/5.0/ref/views/ 
 - To create a sitemap for SEO: https://www.xml-sitemaps.com/

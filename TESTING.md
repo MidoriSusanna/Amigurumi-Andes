@@ -90,6 +90,9 @@ An error has been found related to allauth set up.
 
 ![Sign up error](readme_pics/signuptest.png)
 
+- 404 page: 
+No errors found, only one stray div tag which have been fixed.
+
 # CSS
 
 The custom css page has been validated with [W3C Validator](https://jigsaw.w3.org/css-validator/) and no errors were found:
@@ -168,7 +171,7 @@ Some long lines have been left unmodified to preserve the integrity of the code 
 - Views.py:
 ![views py checkout](readme_pics/checkout-views-E.png)
 - Webhook handler.py:
-![webhook handler py checkout](readme_pics/checkout-webh-handler-E.png)
+![webhook handler py checkout](readme_pics/checkout-webh-handler.png)
 - webhook.py:
 ![webhook py checkout](readme_pics/checkout-webh-E.png)
 

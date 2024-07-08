@@ -39,11 +39,18 @@ class PostCreate(CreateView):
             form.instance.status = 0  # Draft if not superuser
         response = super().form_valid(form)
         if form.instance.status == 1:
-            messages.success(self.request, "You have successfully published the blog post.")
+            messages.success(
+                self.request, "You have successfully published the blog post."
+            )
         elif form.instance.status == 0:
-            messages.success(self.request, "Your blog post is set to draft.")
+            messages.success(
+                self.request, "Your blog post is set to draft."
+            )
         else:
-            messages.success(self.request, "You have created your blog post. It is awaiting approval.")
+            messages.success(
+                self.request,
+                "You have created your blog post. It is awaiting approval."
+            )
         return response
 
 
@@ -59,16 +66,22 @@ class PostUpdate(UserPassesTestMixin, UpdateView):
     def form_valid(self, form):
         response = super().form_valid(form)
         if form.instance.status == 1:
-            messages.success(self.request, "You have updated the blog post to published.")
+            messages.success(
+                self.request, "You have updated the blog post to published."
+            )
         elif form.instance.status == 0:
-            messages.success(self.request, "Your blog post update is set to draft.")
+            messages.success(
+                self.request, "Your blog post update is set to draft."
+            )
         else:
             messages.success(self.request, "You have updated your blog post.")
         return response
 
     def test_func(self):
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser
+        return (
+            self.request.user == post.author or self.request.user.is_superuser
+        )
 
 
 @method_decorator(login_required, name='dispatch')
@@ -81,9 +94,13 @@ class PostDelete(UserPassesTestMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         response = super().delete(request, *args, **kwargs)
-        messages.success(request, "You have successfully deleted your blog post.")
+        messages.success(
+            request, "You have successfully deleted your blog post."
+        )
         return response
 
     def test_func(self):
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser
+        return (
+            self.request.user == post.author or self.request.user.is_superuser
+        )
