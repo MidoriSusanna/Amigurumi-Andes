@@ -203,7 +203,7 @@ UserPassestestMixin and test_func. This is the result:
 ![Forbidden 2](readme_pics/forbidden-delete.png)
 
 A forbidden page is given when a logged-in user who hasn't written an article tries to delete or edit it by navigating directly to the URL. 
-- I had a responsiveness issue related to summernote, I manaed to fix it by adding SUMMERNOTE_CONFIG to the settings file. 
+- I had a responsiveness issue related to summernote, I managed to fix it by adding SUMMERNOTE_CONFIG to the settings file. 
 
 # Tools and technologies used
 

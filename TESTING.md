@@ -230,7 +230,6 @@ The Lighthouse report presents some issues that can be addressed by taking diffe
 - Implement the usage of headings in descending order with clearer tags and more keywords present
 - Eliminate the favicon error presented to the console
 - Be more descriptive when nominating links to help SEO
-- Fix the bugs with the 404.html page and the robots.txt and eliminate the 500 error
 
 # Responsiveness
 
@@ -254,7 +253,7 @@ As a user I want to be able to view individual product details so that I can Ide
 
 As a user I want to be able to easily view the total of my purchases at any time so that I can avoid spending too much and check keep track of my purchase. > By clicking the "+" button, I can see the amount increasing below the cart icon on the top right of the page > PASSED.
 
-As a user I want to be able to see a 404 page so that I can understand what I am looking for is not present in the website/cannot be found. > FAILED and reported as a bug.
+As a user I want to be able to see a 404 page so that I can understand what I am looking for is not present in the website/cannot be found. > PASSED.
 
 **Registration and user account**
 
@@ -276,7 +275,7 @@ As a user I want to be able to search for a product by name or description, so t
 
 As a user I want to be able to sort a specific category of product, so that I can find the best-priced or best-rated product in a specific category, or sort the products in that category by name. > in the products page, it is possible for the user to sort products in different ways by clicking on the sorting tab and choosing the dorting type > PASSED.
 
-**Purchasing and chekout**
+**Purchasing and checkout**
 
 As a user I want to be able to sort the list of available products, so that I can easily identify the best rated, best priced and categorically sorted products. > in the product page, it is possible to see the number of products on the top left of the page > PASSED.
 
@@ -309,11 +308,13 @@ As an admin I want to be able to approve new blog posts from users, so that i ca
 As an admin and as a user I want to be able to delete and edit my blog posts, so that I can keep the website tidy and free of mistakes.> by clicking on the user blog post, the user can access two buttons "edit" or "delete", by clicking these it is possible to edit the post or delete it, being redirected to a confirmation page > PASSED.
 
 **About us and Contact us**
+
 As a user I want to be able to view the about us page, so that I can gather more information about the company and the values. > By clicking on "about us" dropdown and "about us" it is possible to access the about us page > PASSED.
 
 As a user I want to be able to visit a contact us page, so that i can have the contact information of the company and useful links.> By clicking on "about us" dropdown in the menu and "contact us" it is possible to access the contacts, the link is also available in the footer and works as expected > PASSED.
 
 **Join Events**
+
 As a user I want to be able to join events when I am logged in, so that I can participate to the events the community offers.> if the user is logged-in, by clicking on the "About us" dropdown, they can access the "Events" section. Only if the user is logged in, it is possible to click the button "Join event", once clicked the user is redirected to "My events" page > PASSED.
 
 As a user I want to be able to see the events I have joined in my event list, so that I have all the information I need and the upcoming events I signed up for at hand. > by clicking on the "My account" dropdown and "My Events" it is possible to access the event list the user has joined previously > PASSED.
